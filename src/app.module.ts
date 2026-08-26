@@ -10,6 +10,8 @@ import { MercadoriasModule } from './mercadorias/mercadorias.module';
 import { MercadoriaOperacao } from './mercadorias/entities/mercadorias.entity';
 import { CofreModule } from './cofre/cofre.module';
 import { Cofre } from './cofre/entities/cofre.entity';
+import { PatrimonioModule } from './patrimonio/patrimonio.module';
+import { Patrimonio } from './patrimonio/entities/patrimonio.entity';
 
 @Module({
   imports: [
@@ -20,13 +22,14 @@ import { Cofre } from './cofre/entities/cofre.entity';
       username: 'root',       // Seu usuário do MySQL local
       password: '1234567',    // Sua senha do MySQL local
       database: 'caixa_db', // Nome do banco de dados que você criou
-      entities: [Venda, Ficha, MercadoriaOperacao, Cofre], // Adicione as entidades aqui
+      entities: [Venda, Ficha, MercadoriaOperacao, Cofre, Patrimonio], // Adicione as entidades aqui
       synchronize: true,      // ATENÇÃO: Use 'true' apenas em desenvolvimento para criar as tabelas automaticamente
     }),
     VendasModule,
     FichasModule,
     MercadoriasModule,
     CofreModule,
+    PatrimonioModule,
   ],
   controllers: [AppController],
   providers: [AppService],
