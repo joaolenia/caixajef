@@ -12,6 +12,7 @@ import { CofreModule } from './cofre/cofre.module';
 import { Cofre } from './cofre/entities/cofre.entity';
 import { PatrimonioModule } from './patrimonio/patrimonio.module';
 import { Patrimonio } from './patrimonio/entities/patrimonio.entity';
+import { BackupModule } from './backup/backup.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { Patrimonio } from './patrimonio/entities/patrimonio.entity';
     MercadoriasModule,
     CofreModule,
     PatrimonioModule,
+    BackupModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -34,6 +34,9 @@ export class Ficha {
   @Column({ type: 'varchar', length: 20, default: 'ABERTA' }) // 'ABERTA' ou 'PAGA'
   status?: string;
 
+  @Column({ type: 'text', nullable: true })
+  observacao?: string;
+
   @CreateDateColumn({ name: 'data_criacao' })
   dataCriacao?: Date;
 
