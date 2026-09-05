@@ -25,7 +25,14 @@ export class BackupService {
     const fileName = `backup_mercadobomjesus_${dataAtual}.sql`;
     const filePath = path.join(backupDir, fileName);
 
-    const command = `mysqldump -u ${dbUser} -p${dbPass} ${dbName} > "${filePath}"`;
+    // ==============================================================
+    // FORÇANDO O CAMINHO ABSOLUTO DO MYSQLDUMP
+    // Atenção: Verifique se a versão na pasta do cliente é a "8.0". 
+    // Se for outra (ex: 8.1, 8.4), altere o número ali no caminho.
+    // ==============================================================
+    const mysqlDumpPath = `"C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin\\mysqldump.exe"`;
+
+    const command = `${mysqlDumpPath} -u ${dbUser} -p${dbPass} ${dbName} > "${filePath}"`;
 
     try {
       await execAsync(command);
