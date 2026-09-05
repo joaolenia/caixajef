@@ -35,4 +35,9 @@ export class VendasService {
     
     return venda;
   }
+
+  async remove(id: number): Promise<void> {
+    const venda = await this.findOne(id); 
+    await this.vendasRepository.remove(venda);
+  }
 }
